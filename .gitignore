@@ -4,3 +4,6 @@ node_modules
 Documentation
 /dist
 
+
+# Local Netlify folder
+.netlify

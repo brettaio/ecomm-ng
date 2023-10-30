@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-header",
@@ -12,13 +12,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
  * Header Component
  */
 export class HeaderComponent implements OnInit {
-
   @Input() navClass: string;
   @Input() buttonList: boolean;
   @Input() sliderTopbar: boolean;
   @Input() isdeveloper: boolean;
   @Input() shopPages: boolean;
-
 
   constructor(private router: Router, private modalService: NgbModal) {
     this.router.events.forEach((event) => {
@@ -34,8 +32,7 @@ export class HeaderComponent implements OnInit {
     this._activateMenuDropdown();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   _activateMenuDropdown() {
     /**
@@ -61,7 +58,6 @@ export class HeaderComponent implements OnInit {
             if (parent4) {
               const parent5 = parent4.parentElement;
               parent5.classList.remove("active");
-
             }
           }
         }
@@ -166,7 +162,7 @@ export class HeaderComponent implements OnInit {
   }
 
   developerModal(content) {
-    this.modalService.open(content, { size: 'lg', centered: true });
+    this.modalService.open(content, { size: "lg", centered: true });
   }
 
   wishListModal(content) {
