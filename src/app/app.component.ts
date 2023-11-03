@@ -9,19 +9,28 @@ import { Router, NavigationEnd } from "@angular/router";
 export class AppComponent {
   title = "ecomm-ng";
 
-  constructor(private router: Router) {
-    /**
-     * Unicons icon refreshed on route change.
-     */
-    this.router.events.forEach((event) => {
-      if (event instanceof NavigationEnd) {
-        window["Unicons"]["refresh"]();
-      }
+  addclass!: string;
+  buttonShow!: boolean;
+  TopbarShow!: boolean;
+  footerClass!: string;
+  developerPage!: boolean;
+  hideFooter!: boolean;
+  shopPages!: boolean;
 
-      if (!(event instanceof NavigationEnd)) {
-        return;
-      }
-      window.scrollTo(0, 0);
-    });
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  /**
+   * Router activation
+   */
+  onActivate(componentReference: any) {
+    this.addclass = componentReference.navClass;
+    this.buttonShow = componentReference.buttonList;
+    this.TopbarShow = componentReference.sliderTopbar;
+    this.footerClass = componentReference.footerVariant;
+    this.developerPage = componentReference.isdeveloper;
+    this.hideFooter = componentReference.hideFooter;
+    this.shopPages = componentReference.shopPages;
   }
 }

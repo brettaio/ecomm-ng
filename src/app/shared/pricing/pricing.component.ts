@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class PricingComponent implements OnInit {
   @Input()
-  pricingData: Array<{
+  pricingData!: Array<{
     warning?: string;
     title: string;
     price: number;
     list?: Array<[]>;
     btn?: string;
-  }> = [];
+  }>;
 
   constructor() {}
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -174,7 +174,7 @@ export class IndexOnepageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  mapView(mapcontent) {
+  mapView(mapcontent: any) {
     this.modalService.open(mapcontent, {
       windowClass: "dark-modal",
       size: "lg",
@@ -186,7 +186,7 @@ export class IndexOnepageComponent implements OnInit {
    * Open modal for show the video
    * @param content content of modal
    */
-  openWindowCustomClass(content) {
+  openWindowCustomClass(content: any) {
     this.modalService.open(content, {
       windowClass: "dark-modal",
       size: "lg",

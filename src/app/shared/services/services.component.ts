@@ -6,12 +6,10 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./services.component.css"],
 })
 export class ServicesComponent implements OnInit {
-  @Input()
-  servicesData: Array<{
-    icon: string;
-    title: number;
+  @Input() servicesData!: {
+    title: string;
     description: string;
-  }> = [];
+  }[];
 
   constructor() {}
 

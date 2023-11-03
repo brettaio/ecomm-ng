@@ -10,7 +10,7 @@ export class TestimonialComponent implements OnInit {
   @Input()
   testimonialData: Array<{
     profile: string;
-    message: number;
+    message: string;
     name: string;
     designation: string;
   }> = [];
