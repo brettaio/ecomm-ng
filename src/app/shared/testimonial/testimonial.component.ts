@@ -1,19 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, OnInit, Input } from "@angular/core";
+import { OwlOptions } from "ngx-owl-carousel-o";
 
 @Component({
-  selector: 'app-testimonial',
-  templateUrl: './testimonial.component.html',
-  styleUrls: ['./testimonial.component.css']
+  selector: "app-testimonial",
+  templateUrl: "./testimonial.component.html",
+  styleUrls: ["./testimonial.component.css"],
 })
 export class TestimonialComponent implements OnInit {
-
-  @Input() testimonialData: Array<{
+  @Input()
+  testimonialData: Array<{
     profile: string;
-    message: number,
-    name: string,
-    designation: string
-  }>;
+    message: number;
+    name: string;
+    designation: string;
+  }> = [];
 
   /***
    * Client Owl Slider
@@ -25,24 +25,22 @@ export class TestimonialComponent implements OnInit {
     pullDrag: false,
     autoplay: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ["", ""],
     responsive: {
       0: {
-        items: 3
+        items: 3,
       },
       600: {
-        items: 3
+        items: 3,
       },
       900: {
-        items: 3
-      }
+        items: 3,
+      },
     },
-    nav: false
+    nav: false,
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,40 +1,56 @@
-import { Directive, Input, EventEmitter, Inject, Output, ElementRef, HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import {
+  Directive,
+  Input,
+  EventEmitter,
+  Output,
+  ElementRef,
+  Inject,
+  OnInit,
+  OnDestroy,
+} from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 
 @Directive({
-  selector: '[appScrollspy]'
+  selector: "[appScrollspy]",
 })
-export class ScrollspyDirective {
-
-  @Input() public spiedTags = [];
+export class ScrollspyDirective implements OnInit, OnDestroy {
+  @Input() public spiedTags: string[] = [];
   @Output() public sectionChange = new EventEmitter<string>();
-  private currentSection: string;
+  private currentSection = "";
+  private documentScrollSubscription!: (event: Event) => void;
 
-  // tslint:disable-next-line: variable-name
-  constructor(private _el: ElementRef, @Inject(DOCUMENT) private document: Document, ) { }
+  constructor(
+    private el: ElementRef,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
-  @HostListener('window:scroll', ['$event'])
-  /**
-   * Window scroll method
-   */
-  onScroll(event: any) {
-    let currentSection: string;
-    const children = this._el.nativeElement.querySelectorAll('section');
+  ngOnInit(): void {
+    this.documentScrollSubscription = this.onScroll.bind(this);
+    window.addEventListener("scroll", this.documentScrollSubscription);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener("scroll", this.documentScrollSubscription);
+  }
+
+  onScroll(event: Event): void {
+    const children = this.el.nativeElement.querySelectorAll("section");
     const scrollTop = this.document.documentElement.scrollTop;
-    const parentOffset = this.document.documentElement.offsetTop;
+    const parentOffset = this.el.nativeElement.offsetTop;
 
-    // tslint:disable-next-line: prefer-for-of
-    for (let i = 0; i < children.length; i++) {
-      const element = children[i];
-      if (this.spiedTags.some(spiedTag => spiedTag === element.tagName)) {
-        if ((element.offsetTop - parentOffset) <= scrollTop) {
-          currentSection = element.id;
+    for (const element of children) {
+      if (this.spiedTags.includes(element.tagName.toLowerCase())) {
+        const offsetTop = element.offsetTop - parentOffset;
+        if (
+          offsetTop <= scrollTop &&
+          offsetTop + element.clientHeight > scrollTop
+        ) {
+          if (this.currentSection !== element.id) {
+            this.currentSection = element.id;
+            this.sectionChange.emit(this.currentSection);
+          }
         }
       }
-    }
-    if (currentSection !== this.currentSection) {
-      this.currentSection = currentSection;
-      this.sectionChange.emit(this.currentSection);
     }
   }
 }

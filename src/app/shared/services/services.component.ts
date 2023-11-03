@@ -1,21 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  selector: "app-services",
+  templateUrl: "./services.component.html",
+  styleUrls: ["./services.component.css"],
 })
 export class ServicesComponent implements OnInit {
-
-  @Input() servicesData: Array<{
+  @Input()
+  servicesData: Array<{
     icon: string;
-    title: number,
-    description: string
-  }>;
+    title: number;
+    description: string;
+  }> = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

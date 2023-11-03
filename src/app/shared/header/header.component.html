@@ -324,7 +324,7 @@
         </li>
       </ul>
 
-      <ul class="buy-button list-inline mb-0" *ngIf="isdeveloper == true">
+      <ul class="buy-button list-inline mb-0" *ngIf="isDeveloper == true">
         <li class="list-inline-item mb-0">
           <div class="dropdown">
             <button
@@ -363,148 +363,15 @@
           ></a>
         </li>
         <li class="list-inline-item mb-0">
-          <a
+          <!-- <a
             href="javascript:void(0)"
             class="btn btn-icon btn-soft-primary"
             (click)="developerModal(content)"
             data-bs-toggle="modal"
             data-bs-target="#loginform"
             ><i class="uil uil-user icons"></i
-          ></a>
+          ></a>-->
         </li>
-        <ng-template #content let-modal>
-          <div class="modal-lg modal-dialog-centered" role="document">
-            <div
-              class="modal-content rounded shadow-lg border-0 overflow-hidden position-relative"
-            >
-              <button
-                type="button"
-                class="btn-close position-absolute top-0 end-0 mt-2 me-2"
-                (click)="modal.dismiss('Cross click')"
-                style="z-index: 1"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <div class="modal-body p-0">
-                <div class="container-fluid px-0">
-                  <div class="row align-items-center g-0">
-                    <div class="col-lg-6 col-md-5">
-                      <img
-                        src="assets/images/course/online/ab02.jpg"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </div>
-                    <!--end col-->
-
-                    <div class="col-lg-6 col-md-7">
-                      <form class="login-form p-4">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="mb-3">
-                              <label class="form-label"
-                                >Your Email
-                                <span class="text-danger">*</span></label
-                              >
-                              <div class="form-icon position-relative">
-                                <i-feather
-                                  name="user"
-                                  class="fea icon-sm icons"
-                                ></i-feather>
-                                <input
-                                  type="email"
-                                  class="form-control ps-5"
-                                  placeholder="Email"
-                                  name="email"
-                                  required=""
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12">
-                            <div class="mb-3">
-                              <label class="form-label"
-                                >Password
-                                <span class="text-danger">*</span></label
-                              >
-                              <div class="form-icon position-relative">
-                                <i-feather
-                                  name="key"
-                                  class="fea icon-sm icons"
-                                ></i-feather>
-                                <input
-                                  type="password"
-                                  class="form-control ps-5"
-                                  placeholder="Password"
-                                  required=""
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12">
-                            <div class="d-flex justify-content-between">
-                              <div class="mb-3">
-                                <div class="custom-control custom-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="customCheck1"
-                                  />
-                                  <label
-                                    class="custom-control-label ms-1"
-                                    for="customCheck1"
-                                    >Remember me</label
-                                  >
-                                </div>
-                              </div>
-                              <p class="forgot-pass mb-0">
-                                <a
-                                  routerLink="/auth-re-password"
-                                  class="text-dark fw-bold"
-                                  >Forgot password ?</a
-                                >
-                              </p>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12 mb-0">
-                            <div class="d-grid">
-                              <button class="btn btn-primary">Sign in</button>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-12 text-center">
-                            <p class="mb-0 mt-3">
-                              <small class="text-dark me-2"
-                                >Don't have an account ?</small
-                              >
-                              <a
-                                routerLink="/auth-signup"
-                                class="text-dark fw-bold"
-                                >Sign Up</a
-                              >
-                            </p>
-                          </div>
-                          <!--end col-->
-                        </div>
-                        <!--end row-->
-                      </form>
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end row-->
-                </div>
-                <!--end container-->
-              </div>
-            </div>
-          </div>
-        </ng-template>
       </ul>
 
       <a class="logo" routerLink="/index" *ngIf="navClass === 'nav-light'">
@@ -523,25 +390,25 @@
       </a>
     </div>
 
-    <span *ngIf="!buttonList && !isdeveloper && !shopPages">
+    <span *ngIf="!buttonList && !isDeveloper && !shopPages">
       <div class="buy-button">
         <ng-template [ngIf]="navClass === 'nav-light'">
           <a
             href="https://buy.stripe.com/8wM7tveOQ9i88pi3cd"
             class="btn btn-primary login-btn-primary"
-            >Buy Now</a
+            ><i class="uil uil-user-plus"></i> Buy Now</a
           >
           <a
             href="https://buy.stripe.com/8wM7tveOQ9i88pi3cd"
             class="btn btn-light login-btn-light"
-            >Buy Now</a
+            ><i class="uil uil-user-plus"></i> Buy Now</a
           >
         </ng-template>
         <ng-template [ngIf]="navClass !== 'nav-light'">
           <a
             href="https://buy.stripe.com/8wM7tveOQ9i88pi3cd"
             class="btn btn-primary"
-            >Buy Now</a
+            ><i class="uil uil-user-plus"></i> Buy Now</a
           >
         </ng-template>
       </div>
@@ -893,9 +760,9 @@
                 <li>
                   <a class="nav-link-ref" routerLink="/page-pricing">Pricing</a>
                 </li>
-                <li>
+                <!--<li>
                   <a class="nav-link-ref" routerLink="/page-invoice">Invoice</a>
-                </li>
+                </li>-->
               </ul>
             </li>
             <!--<li class="has-submenu"><a href="javascript:void(0)" (click)="onMenuClick($event)"> Account </a><span

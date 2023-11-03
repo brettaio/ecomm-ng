@@ -1,23 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-pricing',
-  templateUrl: './pricing.component.html',
-  styleUrls: ['./pricing.component.css']
+  selector: "app-pricing",
+  templateUrl: "./pricing.component.html",
+  styleUrls: ["./pricing.component.css"],
 })
 export class PricingComponent implements OnInit {
+  @Input()
+  pricingData: Array<{
+    warning?: string;
+    title: string;
+    price: number;
+    list?: Array<[]>;
+    btn?: string;
+  }> = [];
 
-  @Input() pricingData: Array<{
-    warning?: string,
-    title: string,
-    price: number,
-    list?: Array<[]>,
-    btn?: string,
-  }>;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

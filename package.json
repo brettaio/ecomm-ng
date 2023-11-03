@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "sitemap": "npm run sitemap.js"
   },
   "private": true,
   "dependencies": {
@@ -25,14 +26,15 @@
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
     "@ng-bootstrap/ng-bootstrap": "^9.1.2",
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
-    "@scullyio/ng-lib": "^2.1.41",
     "@vimeo/player": "^2.14.1",
     "angular-count-to": "0.0.3",
     "angular-feather": "^6.0.10",
     "angularx-flatpickr": "^6.5.1",
     "bootstrap": "^5.0.1",
+    "feather-icons": "^4.29.1",
     "flatpickr": "^4.6.6",
     "masonry-layout": "^4.2.2",
+    "netlify-cli": "^17.0.0",
     "ngx-lightbox": "^2.3.0",
     "ngx-masonry": "^10.0.6",
     "ngx-owl-carousel-o": "^4.0.0",
@@ -40,6 +42,7 @@
     "ngx-typed-js": "^2.0.2",
     "ngx-youtube-player": "^9.1.0",
     "rxjs": "~6.6.0",
+    "sitemap": "^7.1.1",
     "swiper": "^6.7.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -48,6 +51,7 @@
     "@angular-devkit/build-angular": "~12.0.2",
     "@angular/cli": "^12.0.2",
     "@angular/compiler-cli": "~12.0.2",
+    "@types/feather-icons": "^4.29.3",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",

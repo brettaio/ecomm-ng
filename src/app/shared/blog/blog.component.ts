@@ -1,13 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  selector: "app-blog",
+  templateUrl: "./blog.component.html",
+  styleUrls: ["./blog.component.css"],
 })
-export class BlogComponent implements OnInit { 
-
-  @Input() blogData: Array<{
+export class BlogComponent implements OnInit {
+  @Input() blogData!: Array<{
     image: string;
     title: string;
     like: string;
@@ -16,9 +15,7 @@ export class BlogComponent implements OnInit {
     date: string;
   }>;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
