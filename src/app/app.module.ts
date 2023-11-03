@@ -8,7 +8,9 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { RouterModule } from "@angular/router";
 import { CarouselModule } from "ngx-owl-carousel-o";
-import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
+//import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
+//change to ngx-page-scroll
+
 import { NgbNavModule } from "@ng-bootstrap/ng-bootstrap";
 import { SwiperModule } from "ngx-swiper-wrapper";
 import { SWIPER_CONFIG } from "ngx-swiper-wrapper";
@@ -59,7 +61,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule,
     CarouselModule,
     FeatherModule.pick(allIcons),
-    ScrollToModule.forRoot(),
     RouterModule.forRoot([], { relativeLinkResolution: "legacy" }),
     NgxYoutubePlayerModule,
     NgbDropdownModule,
