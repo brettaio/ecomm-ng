@@ -15,10 +15,16 @@ import { CustomerTestmonialComponent } from "./customer-testmonial/customer-test
 import { ReviewTestmonialComponent } from "./review-testmonial/review-testmonial.component";
 import { SimplePricingComponent } from "./simple-pricing/simple-pricing.component";
 import { MemberComponent } from "./member/member.component";
+import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from "./header/header.component";
+import { IndexOnepageComponent } from "./index-onepage/index-onepage.component";
+import { IndexComponent } from "./index/index.component";
 
 @NgModule({
   declarations: [
     ScrollspyDirective,
+    FooterComponent,
+    HeaderComponent,
     TestimonialComponent,
     ClientsLogoComponent,
     ServicesComponent,
@@ -29,9 +35,13 @@ import { MemberComponent } from "./member/member.component";
     ReviewTestmonialComponent,
     SimplePricingComponent,
     MemberComponent,
+    IndexOnepageComponent,
+    IndexComponent,
   ],
   imports: [CommonModule, CarouselModule, RouterModule],
   exports: [
+    FooterComponent,
+    HeaderComponent,
     TestimonialComponent,
     ScrollspyDirective,
     ClientsLogoComponent,
@@ -43,6 +53,8 @@ import { MemberComponent } from "./member/member.component";
     ReviewTestmonialComponent,
     SimplePricingComponent,
     MemberComponent,
+    IndexOnepageComponent,
+    IndexComponent,
   ],
 })
 export class SharedModule {}

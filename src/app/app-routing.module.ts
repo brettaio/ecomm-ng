@@ -1,15 +1,23 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { IndexOnepageComponent } from "./index-onepage/index-onepage.component";
-import { IndexComponent } from "./index/index.component";
+import { IndexComponent } from "./shared/index/index.component";
+import { IndexOnepageComponent } from "./shared/index-onepage/index-onepage.component";
 
 const routes: Routes = [
   {
     path: "",
     component: IndexComponent,
   },
-  { path: "index-onepage", component: IndexOnepageComponent },
-  // Lazy-loaded core module
+  {
+    path: "single-page",
+    component: IndexOnepageComponent,
+  },
+  {
+    path: "services",
+    loadChildren: () =>
+      import("./backlinks/backlinks.module").then((m) => m.BacklinksModule),
+  },
+  // ... any other routes
 ];
 
 @NgModule({

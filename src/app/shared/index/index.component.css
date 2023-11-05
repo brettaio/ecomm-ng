@@ -1,0 +1,6 @@
+.card .card-body img {
+  width: 100%;
+  height: auto;
+  display: block; /* to remove any extra space beneath the image */
+  margin: 0 auto; /* if you want to center it within the card-body */
+}

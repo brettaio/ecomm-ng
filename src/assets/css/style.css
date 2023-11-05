@@ -992,7 +992,14 @@ button:not(:disabled) {
   position: relative;
   background-position: center center;
 }
-
+.bg-half {
+  background-size: cover;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  position: relative;
+  background-position: center center;
+}
 .home-wrapper:before {
   content: "";
   position: absolute;
@@ -1278,7 +1285,6 @@ button:not(:disabled) {
 }
 
 .section {
-  padding: 100px 0;
   position: relative;
 }
 
@@ -1351,9 +1357,9 @@ button:not(:disabled) {
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 60px 0;
-  }
+  /* .section {
+ *   padding: 60px 0;
+ }*/
   .title-heading .heading {
     font-size: 30px !important;
   }

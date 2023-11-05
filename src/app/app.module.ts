@@ -5,15 +5,13 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { PreloadAllModules, RouterModule } from "@angular/router";
+import { RouterModule } from "@angular/router";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { NgbNavModule } from "@ng-bootstrap/ng-bootstrap";
 import { SharedModule } from "./shared/shared.module";
 import { NgbDropdownModule } from "@ng-bootstrap/ng-bootstrap";
-import { IndexComponent } from "./index/index.component";
-import { IndexOnepageComponent } from "./index-onepage/index-onepage.component";
 import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { SwitcherComponent } from "./shared/switcher/switcher.component";
@@ -30,15 +28,10 @@ import { environment } from "../environments/environment";
 //import { LightboxModule } from "ngx-lightbox";
 //import { CoreModule } from "./core/core.module";
 
+import { BacklinksModule } from "./backlinks/backlinks.module";
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    IndexComponent,
-    IndexOnepageComponent,
-    SwitcherComponent,
-  ],
+  declarations: [AppComponent, SwitcherComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -50,6 +43,7 @@ import { environment } from "../environments/environment";
     RouterModule,
     FormsModule,
     SharedModule,
+    BacklinksModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

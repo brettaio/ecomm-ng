@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ecomm-ng": {
+    "dot-data": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ecomm-ng",
+            "outputPath": "dist/dot-data",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,10 +29,12 @@
             "styles": [
               "src/assets/css/custom.css",
               "src/assets/css/colors/default.css",
+              "src/assets/css/style.css",
               "src/assets/css/materialdesignicons.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-              "src/assets/css/animate.css"
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap.min.css"
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -77,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ecomm-ng:build"
+            "browserTarget": "dot-data:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ecomm-ng:build:production"
+              "browserTarget": "dot-data:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ecomm-ng:build"
+            "browserTarget": "dot-data:build"
           }
         },
         "test": {
@@ -127,11 +129,11 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "devServerTarget": "ecomm-ng:serve"
+            "devServerTarget": "dot-data:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ecomm-ng:serve:production"
+              "devServerTarget": "dot-data:serve:production"
             }
           }
         }

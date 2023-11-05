@@ -16,10 +16,10 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ecomm-ng'`, () => {
+  it(`should have as title 'dot-data'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual("ecomm-ng");
+    expect(app.title).toEqual("dot-data");
   });
 
   it("should render title", () => {
@@ -27,7 +27,7 @@ describe("AppComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector(".content span").textContent).toContain(
-      "ecomm-ng app is running!"
+      "dot-data app is running!"
     );
   });
 });
